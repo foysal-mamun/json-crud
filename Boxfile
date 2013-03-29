@@ -1,0 +1,3 @@
+web1:
+  php_extensions: [mcrypt, mysqli, mysql, mbstring, pdo_mysql]
+  shared_writable_dirs: [tmp]
