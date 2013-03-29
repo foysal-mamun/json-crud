@@ -3,7 +3,7 @@ function __autoload($className){
 	include_once("models/$className.php");	
 }
 
-$users=new User("tunnel.pagodabox.com","leann","LFmskHzx","crud");
+$users=new User("your_host","your_user","your_password","your_database");
 
 if(!isset($_POST['action'])) {
 	print json_encode(0);
