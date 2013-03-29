@@ -19,7 +19,7 @@ function removeEditable(element) {
 	
 	var userJson = JSON.stringify(User);
 	
-	$.post('controller.php',
+	$.post('Controller.php',
 		{
 			action: 'update_field_data',			
 			user: userJson
@@ -51,7 +51,7 @@ function deleteUser(element) {
 	
 	var userJson = JSON.stringify(User);
 	
-	$.post('controller.php',
+	$.post('Controller.php',
 		{
 			action: 'delete_user',
 			user: userJson
@@ -68,7 +68,7 @@ function getUserList(element) {
 	
 	$('#indicator').show();
 	
-	$.post('controller.php',
+	$.post('Controller.php',
 		{
 			action: 'get_users'				
 		},
@@ -111,7 +111,7 @@ function addUser(element) {
 	
 	var userJson = JSON.stringify(User);
 	
-	$.post('controller.php',
+	$.post('Controller.php',
 		{
 			action: 'add_user',
 			user: userJson
