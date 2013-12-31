@@ -4,8 +4,8 @@ function __autoload($className){
 }
 
 //$users=new User("your_host","your_user","your_password","your_database");
-$users=new User("tunnel.pagodabox.com","leann","LFmskHzx","crud");
-//$users=new User("localhost","root","root","test");
+//$users=new User("tunnel.pagodabox.com","leann","LFmskHzx","crud");
+$users=new User("localhost","root","root","test");
 
 if(!isset($_POST['action'])) {
 	print json_encode(0);
