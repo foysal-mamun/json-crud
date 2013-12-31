@@ -12,11 +12,11 @@ if(!isset($_POST['action'])) {
 }
 
 // Almost spoiled my day 11th May 2013.
-/*if(get_magic_quotes_gpc()){
+if(get_magic_quotes_gpc()){
     $userParams = stripslashes($_POST['user']);
 } else {
     $userParams = $_POST['user'];
-}*/
+}
 
 switch($_POST['action']) {
 	case 'get_users':
