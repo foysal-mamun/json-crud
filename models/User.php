@@ -16,7 +16,7 @@ class User {
 
 	public function add($user){		
 		$sth = $this->dbh->prepare("INSERT INTO users(name, email, mobile, address) VALUES (?, ?, ?, ?)");
-		$sth->execute(array(htmlspecialchars($user->name), htmlspecialchars($user->email), htmlspecialchars($user->mobile), htmlspecialchars($user->address)));
+		$sth->execute(array(strip_tags($user->name), strip_tags($user->email), strip_tags($user->mobile), strip_tags($user->address)));
 		//$sth->execute(array($user->name, $user->email, $user->mobile, $user->address));
 		return json_encode($this->dbh->lastInsertId());
 	}
@@ -29,7 +29,7 @@ class User {
 	
 	public function updateValue($user){		
 		$sth = $this->dbh->prepare("UPDATE users SET ". $user->field ."=? WHERE id=?");
-		$sth->execute(array(htmlspecialchars($user->newvalue), $user->id));
+		$sth->execute(array(strip_tags($user->newvalue), $user->id));
 		//$sth->execute(array($user->newvalue, $user->id));
 		return json_encode(1);	
 	}
