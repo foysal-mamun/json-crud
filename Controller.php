@@ -11,7 +11,7 @@ if(!isset($_POST['action'])) {
 	print json_encode(0);
 	return;
 }
-
+//$userParams = $_POST['user'];
 // Almost spoiled my day 11th May 2013.
 /*if(get_magic_quotes_gpc()){
     $userParams = stripslashes($_POST['user']);
@@ -26,19 +26,19 @@ switch($_POST['action']) {
 	
 	case 'add_user':
 		$user = new stdClass;
-		$user = json_decode($userParams );
+		$user = json_decode($_POST['user']);
 		print $users->add($user);		
 	break;
 	
 	case 'delete_user':
 		$user = new stdClass;
-		$user = json_decode($userParams );
+		$user = json_decode($_POST['user']);
 		print $users->delete($user);		
 	break;
 	
 	case 'update_field_data':
 		$user = new stdClass;
-		$user = json_decode($userParams );
+		$user = json_decode($_POST['user']);
 		print $users->updateValue($user);				
 	break;
 }
