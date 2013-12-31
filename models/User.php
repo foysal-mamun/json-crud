@@ -16,7 +16,7 @@ class User {
 
 	public function add($user){		
 		$sth = $this->dbh->prepare("INSERT INTO users(name, email, mobile, address) VALUES (?, ?, ?, ?)");
-		$sth->execute(array(strip_tags($user->name, strip_tags($user->email), strip_tags($user->mobile), strip_tags($user->address)));		
+		$sth->execute(array(strip_tags($user->name), strip_tags($user->email), strip_tags($user->mobile), strip_tags($user->address)));		
 		return json_encode($this->dbh->lastInsertId());
 	}
 	
